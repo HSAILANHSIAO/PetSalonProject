@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.PetMapper">
+
+	<insert id="addPet" parameterType="Pet">
+	insert into pet(name,birthday,weigh,sort,phone,address) values(#{name},#{birthday},#{weigh},#{sort},#{phone},#{address}) 
+	</insert>
+ 
+  <select id="selectAll" resultType="Pet">
+   
+   select *from pet
+  </select>
+  
+  <select id="selectById" resultType="Pet">
+  select * from pet where id=#{id}
+  </select>
+  
+  <select id="selectByIdRange" resultType="Pet">
+  select * from pet where id between #{start} and #{end}
+  </select>
+  
+  <update id="update" parameterType="Pet">
+  	update pet set name=#{name},birthday=#{birthday},weigh=#{weigh},sort=#{sort},phone=#{phone},address=#{address} where id=#{id}
+  </update>
+  
+  <delete id="deleteById" parameterType="Integer">
+  delete from pet where id=#{id}
+  </delete>
+</mapper>

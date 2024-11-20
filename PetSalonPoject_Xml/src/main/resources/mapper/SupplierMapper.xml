@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.SupplierMapper">
+  <insert id="appSupplier" parameterType="Supplier">
+  insert into supplier(phone,name,price,quantity,sum) values(#{phone},#{name},#{price},#{quantity},#{sum}) 
+  </insert>
+  
+  <select id="selectAll" resultType="Supplier">
+  select * from supplier 
+   
+  </select>
+  
+  <select id="selectById" resultType="Supplier">
+  select * from supplier where id=#{id}
+  </select>
+  
+ 	<select	id="selectByIdRange" resultType="Supplier">
+ 	
+ 		select * from supplier where id between #{start} and #{end}
+  </select>  
+  
+  	<update id="update" parameterType="Supplier">
+  		update supplier set phone=#{phone},name=#{name},price=#{price},quantity=#{quantity},sum=#{sum} where id=#{id}
+  	</update>
+  	
+  	<delete id="deleteById" parameterType="Integer">
+  		delete from Supplier where id=#{id}
+  	</delete>
+</mapper>
