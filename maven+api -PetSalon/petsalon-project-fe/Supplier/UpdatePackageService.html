@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link href="page.css" rel="stylesheet">
+    <script src="jquery-3.7.1.js"></script>
+</head>
+<body>
+    <div class="head"><h5>PetSalon:購買區</h5></div>
+    <div class="navigation">
+        <a href="/petsalon-project/index.html">回一頁</a>
+        <a href="/petsalon-project/Supplier/AllSupplier.html">查詢</a>
+        <a href="/petsalon-project/Supplier/AddSupplier.html">購買</a>
+        <a href="/petsalon-project/Supplier/UpdatePackageService.html">更改</a>
+    </div>
+    <div class="content">
+        第??筆:<input type="text" id="id"><br>
+        購買數量:<input type="text" id="quantity"><br>
+        總金額:<input type="text" id="sum"><br>
+        <button id="update">修改</button><br>
+        <lable id="msg"></lable>
+
+    </div>
+    <div class="end"></div>
+    <script>
+        $("#update").click(function(){
+            var ID=$("#id").val();
+            var QUANTITY=$("#quantity").val();
+            var SUM=$("#sum").val(); 
+            $.ajax({
+                url:"http://192.168.2.4:8080/supplier/updateSupplier/"+ID+"/"+QUANTITY+"/"+SUM,
+                type:"put",
+                success:function(data){
+                    $("#msg").html(data);
+                },
+                error:function(error){
+                    console.log(error);
+                }
+            });
+           
+           
+        
+        });
+    </script>
+</body>
+</html>

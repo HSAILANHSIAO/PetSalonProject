@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link href="page.css" rel="stylesheet">
+    <script src="jquery-3.7.1.js"></script>
+</head>
+<body>
+    <div class="head"><h2>PetSalon:毛孩基本資料</h2></div>
+    <div class="navigation">
+        <a href="/petsalon-project/index.html">回一頁</a>
+        <a href="/petsalon-project/Pet/AllPet.html">查詢會員</a>
+        <a href="/petsalon-project/Pet/AddPet.html">建立會員</a>
+        <a href="/petsalon-project/Pet/UpdatePetService.html">修改會員</a>
+        <a href="/petsalon-project/Pet/DeletePetService.html">刪除會員</a>
+
+    </div>
+    <div class="content">
+        ID:<input type="text" id="id"><br>
+        <button id="delete">刪除會員</button><br>
+        <lable id="msg"></lable>
+
+    </div>
+    <div class="end"></div>
+
+    <script>
+        $("#delete").click(function(){
+            var ID=$("#id").val();
+            $.ajax({
+                url:"http://192.168.2.4:8080/pet/DeletePet/"+ID,
+                type:"delete",
+                success:function(data){
+                    $("#msg").html(data);
+                },
+                error:function(error){
+                    console.log(error);
+                }
+
+            });
+        
+        });
+    </script>
+</body>
+</html>

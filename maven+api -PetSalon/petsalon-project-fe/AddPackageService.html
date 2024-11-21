@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link href="page.css" rel="stylesheet">
+    <script src="jquery-3.7.1.js"></script>
+</head>
+<body>
+    <div class="head">
+        <h5>PetSalon:方案A.洗澡;B.剃毛;C.藥浴;D.洗澡+剃毛</h5>
+    </div>
+    <div class="navigation">
+        <a href="index.html">首頁</a>
+        <a href="AllPackageService.html">查詢資料</a>
+        <a href="AddPackageService.html">預約</a>
+        <a href="UpdatePackageService.html">更改預約</a>
+        <a href="DeletePackageService.html">刪除資料</a>
+
+    </div>
+    
+    <div class="content">
+        姓名:<Input type="text" id="name"><br>
+        付費方式:<input type="text" id="payer"><br>
+        預約日期:<input type="text" id="reservation"><br>
+        預約時間:<input type="text" id="time"><br>
+        預約方案:<input  type="text" id="salon"><br>
+        手機號碼:<input type="text" id="phone"><br>
+        <button id="add">確定</button>
+        <hr>
+        <label id="ans"></label>
+        <script>
+            $("#add").click(function(){
+                var Name=$("#name").val();
+                var Payer=$("#payer").val();
+                var Reservation=$("#reservation").val();
+                var Time=$("#time").val();
+                var Salon=$("#salon").val();
+                var Phone=$("#phone").val();
+            $.ajax({
+                url:"http://192.168.2.4:8080/packageservice/addPackageService",
+                type:"post",
+                contentType:"application/json",
+                data:JSON.stringify({
+                    name:Name,
+                    payer:Payer,
+                    reservation:Reservation,
+                    time:Time,
+                    salon:Salon,
+                    phone:Phone
+                
+                }),
+
+                success:function(data){
+                    $("#ans").html(data);
+                },
+
+                error:function(errer){
+
+                }
+
+            });
+        });
+
+        </script>
+    </div>
+    <div class="end"></div>
+</body>
+</html>

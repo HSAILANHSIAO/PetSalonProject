@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link href="page.css" rel="stylesheet">
+    <script src="jquery-3.7.1.js"></script>
+</head>
+<body>
+    <div class="head"><h5>PetSalon:方案A.洗澡;B.剃毛;C.藥浴;D.洗澡+剃毛</h5></div>
+    <div class="navigation">
+        <a href="index.html">首頁</a>
+        <a href="AllPackageService.html">查詢資料</a>
+        <a href="AddPackageService.html">預約</a>
+        <a href="UpdatePackageService.html">更改預約</a>
+        <a href="DeletePackageService.html">刪除資料</a>
+    </div>
+    <div class="content">
+        ID:<input type="text" id="id"><br>
+        預約日期:<input type="text" id="reservation"><br>
+        <button id="update">修改</button><br>
+        <lable id="msg"></lable>
+
+    </div>
+    <div class="end"></div>
+    <script>
+        $("#update").click(function(){
+            var ID=$("#id").val();
+            var RESERVATION=$("#reservation").val(); 
+            $.ajax({
+                url:"http://192.168.2.4:8080/packageservice/updatePackageService/"+ID+"/"+RESERVATION,
+                type:"put",
+                success:function(data){
+                    $("#msg").html(data);
+                },
+                error:function(error){
+                    console.log(error);
+                }
+            });
+           
+           
+        
+        });
+    </script>
+</body>
+</html>

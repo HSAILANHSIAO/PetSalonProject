@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link href="page.css" rel="stylesheet">
+    <script src="jquery-3.7.1.js"></script>
+</head>
+<body>
+    <div class="head"><h5>PetSalon:購買區</h5></div>
+    <div class="navigation">
+        <a href="/petsalon-project/index.html">回一頁</a>
+        <a href="/petsalon-project/Supplier/AllSupplier.html">查詢</a>
+        <a href="/petsalon-project/Supplier/AddSupplier.html">購買</a>
+        <a href="/petsalon-project/Supplier/UpdatePackageService.html">更改</a>
+        
+    </div>
+    
+    <div class="content">
+        手機號碼:<input type="text" id="phone"><br>
+        商品名稱:<input type="text" id="name"><br>
+        價格$$:<input type="text" id="price"><br>
+        購買數量:<input  type="text" id="quantity"><br>
+        總金額$$:<input type="text" id="sum"><br>
+        <button id="add">送出</button>
+        <hr>
+        <label id="ans"></label>
+        <script>
+            $("#add").click(function(){
+                var Phone=$("#phone").val();
+                var Name=$("#name").val();
+                var Price=$("#price").val();
+                var Quantity=$("#quantity").val();
+                var Sum=$("#sum").val();
+            $.ajax({
+                url:"http://192.168.2.4:8080/supplier/addSupplier",
+                type:"post",
+                contentType:"application/json",
+                data:JSON.stringify({
+                    phone:Phone,
+                    name:Name,
+                    price:Price,
+                    quantity:Quantity,
+                    sum:Sum
+                
+                }),
+
+                success:function(data){
+                    $("#ans").html(data);
+                },
+
+                error:function(errer){
+
+                }
+
+            });
+        });
+
+        </script>
+    </div>
+    <div class="end"></div>
+</body>
+</html>

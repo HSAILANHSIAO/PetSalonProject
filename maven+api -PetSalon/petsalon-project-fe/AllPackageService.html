@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link href="page.css" rel="stylesheet">
+    <script src="jquery-3.7.1.js"></script>
+</head>
+<body>
+    <div class="head">
+        <h5>PetSalon:方案A.洗澡;B.剃毛;C.藥浴;D.洗澡+剃毛</h5>
+    </div>
+    <div class="navigation">
+        <a href="index.html">首頁</a>
+        <a href="AllPackageService.html">查詢資料</a>
+        <a href="AddPackageService.html">預約</a>
+        <a href="UpdatePackageService.html">更改預約</a>
+        <a href="DeletePackageService.html">刪除資料</a>
+
+    </div>
+    <div id="content" class="content"></div>
+    <div class="end"></div>
+    <script>
+        $.ajax({
+            url:"http://192.168.2.4:8080/packageservice/allPackageservice",
+            type:"get",
+            success:function(data){
+                var show="";
+                for(var i=0;i<data.length;i++)
+                {
+                    show=show+"號碼:"+data[i].id+
+                    " ,名字:"+data[i].name+
+                    " ,付款方式:"+data[i].payer+
+                    " ,預約日期:"+data[i].reservation+
+                    " ,預約時間:"+data[i].time+
+                    " ,預約方案:"+data[i].salon+
+                    " ,手機號碼:"+data[i].phone+"<br>";
+                }
+                $("#content").html(show);
+            },
+            error:function(error){
+
+            }
+        });
+
+    </script>
+
+
+
+
+</body>
+</html>

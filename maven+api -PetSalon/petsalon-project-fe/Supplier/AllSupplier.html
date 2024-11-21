@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link href="page.css" rel="stylesheet">
+    <script src="jquery-3.7.1.js"></script>
+</head>
+<body>
+    <div class="head"><h5>PetSalon:PetSalon:購買區</h5></div>
+    <div class="navigation">
+        <a href="/petsalon-project/index.html">回一頁</a>
+        <a href="/petsalon-project/Supplier/AllSupplier.html">查詢</a>
+        <a href="/petsalon-project/Supplier/AddSupplier.html">購買</a>
+        <a href="/petsalon-project/Supplier/UpdatePackageService.html">更改</a>
+        
+    </div>
+    <div id="content" class="content"></div>
+    <div class="end"></div>
+    <script>
+        $.ajax({
+            url:"http://192.168.2.4:8080/supplier/allSupplier",
+            type:"get",
+            success:function(data){
+                var show="";
+                for(var i=0;i<data.length;i++)
+                {
+                    show=show+"第n筆:"+data[i].id+
+                    ",手機號碼:"+data[i].phone+
+                    ",商品名稱:"+data[i].name+
+                    ",價格$$:"+data[i].price+
+                    ",商品數量:"+data[i].quantity+
+                    ",總金額$:"+data[i].sum+"<br>";
+                    
+                }
+                $("#content").html(show);
+            },
+            error:function(error){
+
+            }
+        });
+
+    </script>
+
+
+
+
+</body>
+</html>

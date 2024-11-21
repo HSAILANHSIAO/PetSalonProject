@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link href="page.css" rel="stylesheet">
+    <script src="jquery-3.7.1.js"></script>
+</head>
+<body>
+    <div class="head"><h2>PetSalon:毛孩基本資料</h2></div>
+    <div class="navigation">
+        <a href="/petsalon-project/index.html">回一頁</a>
+        <a href="/petsalon-project/Pet/AllPet.html">查詢會員</a>
+        <a href="/petsalon-project/Pet/AddPet.html">建立會員</a>
+        <a href="/petsalon-project/Pet/UpdatePetService.html">修改會員</a>
+        <a href="/petsalon-project/Pet/DeletePetService.html">刪除會員</a>
+        
+    </div>
+    <div id="content" class="content"></div>
+    <div class="end"></div>
+    <script>
+        $.ajax({
+            url:"http://192.168.2.4:8080/pet/AllPet",
+            type:"get",
+            success:function(data){
+                var show="";
+                for(var i=0;i<data.length;i++)
+                {
+                    show=show+"編號:"+data[i].id+
+                    " ,名字:"+data[i].name+
+                    " ,出生日:"+data[i].bridhtay+
+                    " ,體重(公斤)):"+data[i].weigh+
+                    " ,品種:"+data[i].sort+
+                    " ,手機:"+data[i].phone+
+                    " ,地址:"+data[i].address+"<br>";
+                    
+                }
+                $("#content").html(show);
+            },
+            error:function(error){
+
+            }
+        });
+
+    </script>
+
+
+
+
+</body>
+</html>

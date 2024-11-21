@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<mate charset="UTF-8">
+<title>Insert title here</title>
+</mate>
+</head>
+
+<body>
+
+<a herf="http://localhost:8080/swagger-ui/index.html" target=_blank>Swagger UI</a>
+
+</body>
+</html>

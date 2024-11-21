@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link href="page.css" rel="stylesheet">
+    <script src="jquery-3.7.1.js"></script>
+</head>
+<body>
+    <div class="head"><h2>PetSalon:毛孩基本資料</h2></div>
+    <div class="navigation">
+        <a href="/petsalon-project/index.html">回一頁</a>
+        <a href="/petsalon-project/Pet/AllPet.html">查詢會員</a>
+        <a href="/petsalon-project/Pet/AddPet.html">建立會員</a>
+        <a href="/petsalon-project/Pet/UpdatePetService.html">修改會員</a>
+        <a href="/petsalon-project/Pet/DeletePetService.html">刪除會員</a>
+        
+    </div>
+    
+    <div class="content">
+        名字:<input type="text" id="name"><br>
+        出生日:<input type="text" id="birthday"><br>
+        體重(公斤):<input type="text" id="weigh"><br>
+        品種:<input  type="text" id="sort"><br>
+        手機:<input type="text" id="phone"><br>
+        地址:<input type="text" id="address"><br>
+        <button id="add">送出</button>
+        <hr>
+        <label id="ans"></label>
+        <script>
+            $("#add").click(function(){
+                var Name=$("#name").val();
+                var Birthday=$("#birthday").val();
+                var Weigh=$("#weigh").val();
+                var Sort=$("#sort").val();
+                var Phone=$("#phone").val();
+                var Address=$("#address").val();
+            $.ajax({
+                url:"http://192.168.2.4:8080/pet/PetServiceImpl",
+                type:"post",
+                contentType:"application/json",
+                data:JSON.stringify({
+                    name:Name,
+                    birthday:Birthday,
+                    weigh:Weigh,
+                    sort:Sort,
+                    phone:Phone,
+                    address:Address
+                
+                }),
+
+                success:function(data){
+                    $("#ans").html(data);
+                },
+
+                error:function(errer){
+
+                }
+
+            });
+        });
+
+        </script>
+    </div>
+    <div class="end"></div>
+</body>
+</html>
