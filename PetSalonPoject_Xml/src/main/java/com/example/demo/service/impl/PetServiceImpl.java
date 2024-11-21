@@ -23,13 +23,14 @@ public class PetServiceImpl implements PetService{
 
 	@Override
 	public List<Pet> AllPet() {
-		// TODO Auto-generated method stub
-		return petmapper.allPet();
+		return petmapper.selectAll();
 	}
 
 	@Override
 	public void UpdatePet(Pet e) {
+		
 		petmapper.update(e);
+	
 		
 	}
 

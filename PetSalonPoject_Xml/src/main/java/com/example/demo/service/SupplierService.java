@@ -6,7 +6,7 @@ import com.example.demo.model.Supplier;
 
 public interface SupplierService {
 		//create
-		void SddSupplier(Supplier s);
+		void AddSupplier(Supplier s);
 		
 	
 		

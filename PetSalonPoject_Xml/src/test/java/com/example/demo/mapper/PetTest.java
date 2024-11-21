@@ -13,7 +13,7 @@ public class PetTest {
 	@Autowired
 	PetMapper petmapper;
 	
-	//@Test
+	@Test
 	public void PetTest()
 	{
 		//petmapper.addPet(new Pet("luka","0102",8,"DOG","09560","復興北路一號"));
@@ -37,7 +37,7 @@ public class PetTest {
 		
 	}
 	
-	@Test
+	//@Test
 	public void deleteTest()
 	{
 		petmapper.deleteById(7);

@@ -3,7 +3,8 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.mapper.SupplierMapper">
-  <insert id="appSupplier" parameterType="Supplier">
+
+  <insert id="addSupplier" parameterType="Supplier">
   insert into supplier(phone,name,price,quantity,sum) values(#{phone},#{name},#{price},#{quantity},#{sum}) 
   </insert>
   
@@ -22,7 +23,7 @@
   </select>  
   
   	<update id="update" parameterType="Supplier">
-  		update supplier set phone=#{phone},name=#{name},price=#{price},quantity=#{quantity},sum=#{sum} where id=#{id}
+  		update supplier set quantity=#{quantity},sum=#{sum} where id=#{id}
   	</update>
   	
   	<delete id="deleteById" parameterType="Integer">

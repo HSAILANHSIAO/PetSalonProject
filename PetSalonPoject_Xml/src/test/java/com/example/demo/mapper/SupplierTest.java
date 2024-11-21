@@ -15,15 +15,16 @@ public class SupplierTest {
 	SupplierMapper suppliermapper;
 	
 	
-	//@Test
+	@Test
 	public void SuplierTest() {
 		
-		//suppliermapper.appSupplier(new Supplier("09560","潔牙棒","65",5,"325"));
+		suppliermapper.addSupplier(new Supplier("09568","狗牌飼料","320",1,"320"));
 		
 		//System.out.println(suppliermapper.selectById(1));
 		
-		System.out.println(suppliermapper.selectByIdRange(2,3));
+		//System.out.println(suppliermapper.selectByIdRange(2,3));
 		
+		//System.out.println(suppliermapper.selectAll());
 		System.out.println("success");
 	}
 	
@@ -45,7 +46,7 @@ public class SupplierTest {
 	}
 	
 	
-	@Test
+	//@Test
 	public void deleteTest()
 	{
 		suppliermapper.deleteById(3);

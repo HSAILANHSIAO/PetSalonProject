@@ -17,7 +17,7 @@ public class SupplierServiceImpl implements SupplierService{
 	
 
 	@Override
-	public void SddSupplier(Supplier s) {
+	public void AddSupplier(Supplier s) {
 		suppliermapper.addSupplier(s);
 		
 	}
@@ -30,6 +30,12 @@ public class SupplierServiceImpl implements SupplierService{
 
 	@Override
 	public void UpdateSupplier(Supplier s) {
+		List<Supplier> l=suppliermapper.selectById(s.getId());
+		Supplier supplier=l.get(0);
+		
+		supplier.setQuantity(s.getQuantity());
+		supplier.setSum(s.getSum());
+		
 		suppliermapper.update(s);
 		
 	}
