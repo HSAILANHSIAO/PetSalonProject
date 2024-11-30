@@ -29,7 +29,7 @@
             var ID=$("#id").val();
             var RESERVATION=$("#reservation").val(); 
             $.ajax({
-                url:"http://localhost8080/packageservice/updatePackageService/"+ID+"/"+RESERVATION,
+                url:"http://localhost:8080/packageservice/updatePackageService/"+ID+"/"+RESERVATION,
                 type:"put",
                 success:function(data){
                     $("#msg").html(data);
