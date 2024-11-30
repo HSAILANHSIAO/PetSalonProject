@@ -5,7 +5,7 @@
 
 ---
 
-### 安裝套件：
+### 安裝套件 maven api + html：
 
 #### Backend（後端）：
 - **Spring Boot 3.0**  
