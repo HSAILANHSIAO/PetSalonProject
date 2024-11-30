@@ -33,7 +33,7 @@
             var PHONE=$("#phone").val();
             var ADDRESS=$("#address").val(); 
             $.ajax({
-                url:"http://192.168.2.4:8080/pet/UpdatePet/"+ID+"/"+NAME+"/"+PHONE+"/"+ADDRESS,
+                url:"http://localhost:8080/pet/UpdatePet/"+ID+"/"+NAME+"/"+PHONE+"/"+ADDRESS,
                 type:"put",
                 success:function(data){
                     $("#msg").html(data);
