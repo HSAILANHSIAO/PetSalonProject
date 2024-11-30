@@ -5,9 +5,9 @@ PetSalonProject
 ==================================================
 ##　安裝套件:##<br>
 **backEnd**<br>
-*　Sprint boot3.0<br>
-*　MyBatis3.0<br>
-*　Mysql8.0<br>
+*  Sprint boot3.0<br>
+*  MyBatis3.0<br>
+*   ysql8.0<br>
 **fontEnd**<br>
 *  Vue 3.0<br>
 *  Ajax<br>
