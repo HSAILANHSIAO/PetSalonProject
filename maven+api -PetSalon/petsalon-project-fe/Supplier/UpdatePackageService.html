@@ -30,7 +30,7 @@
             var QUANTITY=$("#quantity").val();
             var SUM=$("#sum").val(); 
             $.ajax({
-                url:"http://192.168.2.4:8080/supplier/updateSupplier/"+ID+"/"+QUANTITY+"/"+SUM,
+                url:"http://localhost:8080/supplier/updateSupplier/"+ID+"/"+QUANTITY+"/"+SUM,
                 type:"put",
                 success:function(data){
                     $("#msg").html(data);
