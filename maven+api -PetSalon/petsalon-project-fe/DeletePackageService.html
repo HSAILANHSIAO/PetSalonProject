@@ -29,7 +29,7 @@
         $("#delete").click(function(){
             var ID=$("#id").val();
             $.ajax({
-                url:"http://192.168.2.4:8080/packageservice/daletePackageService/"+ID,
+                url:"http://localhost:8080/packageservice/daletePackageService/"+ID,
                 type:"delete",
                 success:function(data){
                     $("#msg").html(data);
