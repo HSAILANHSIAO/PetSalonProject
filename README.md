@@ -1,4 +1,3 @@
-
 # PetSalonProject
 
 ## 寵物沙龍預約表
@@ -22,6 +21,12 @@
 
 ### 功能介紹：
 
+- **結合CRUD結合SwaggerUi **
+![image](https://github.com/user-attachments/assets/13f6ef2c-33ff-4f1c-997d-f5add080342e)
+![image](https://github.com/user-attachments/assets/78de6fb8-03b8-4123-8f59-b379b778e610)
+![image](https://github.com/user-attachments/assets/8209b86d-b335-4ea1-ae87-e5857c79e791)
+
+  
 1. **預約表**  
    可在此進行預約設定。
 
@@ -36,13 +41,14 @@
 
 ###  畫面展示:
 1. **首頁**
-![image](https://github.com/user-attachments/assets/7c1ee683-dfac-44e2-90d1-65a2403bb117)
-
-2. **商品區**  新增功能
-![image](https://github.com/user-attachments/assets/7faae9b0-65d2-4c19-8ff7-078c84c41f7e)
+![image](https://github.com/user-attachments/assets/713fc0d8-6f15-472c-9a7c-5dcb4debed5a)
 
 
-3. **基本資料**  新增功能
-![image](https://github.com/user-attachments/assets/39d1781c-4680-4ff0-8f3a-0080aea678f2)
+2. **商品區**  
+![image](https://github.com/user-attachments/assets/fa98763d-79ac-4a76-91e1-3321b2da00cd)
+
+
+3. **基本資料** 
+![image](https://github.com/user-attachments/assets/d9654e37-89de-48ae-a423-a328b24a12d0)
 
 
