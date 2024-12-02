@@ -1,6 +1,19 @@
 # PetSalonProject
 
 ## 寵物沙龍預約表
+-  製作動機:
+*  a- 提供客戶友善的預約表,可新增預約和修改預約
+*  b-用MFA的方式進行客戶驗證
+*  C-供客戶選擇寵物的服務內容
+-  如下:
+1. **預約表**  
+   可在此進行預約設定。
+
+2. **商品區**  
+   提供各種寵物商品建檔修改功能。
+
+3. **基本資料**  
+   用戶管理基本信息，寵物資料。
 
 ---
 
@@ -25,16 +38,6 @@
 ![image](https://github.com/user-attachments/assets/13f6ef2c-33ff-4f1c-997d-f5add080342e)
 ![image](https://github.com/user-attachments/assets/78de6fb8-03b8-4123-8f59-b379b778e610)
 ![image](https://github.com/user-attachments/assets/8209b86d-b335-4ea1-ae87-e5857c79e791)
-
-  
-1. **預約表**  
-   可在此進行預約設定。
-
-2. **商品區**  
-   提供各種寵物商品建檔修改功能。
-
-3. **基本資料**  
-   用戶管理基本信息，寵物資料。
 
 
 ---
